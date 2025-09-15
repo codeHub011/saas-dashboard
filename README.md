@@ -1,12 +1,77 @@
-# React + Vite
+# SaaS Contracts Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React + Tailwind CSS single-page application (SPA) that simulates a SaaS contracts management dashboard.  
+This project was built as part of the **UI/UX Developer Assignment**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
+- **Login Page**: Mock authentication with `username` (any) and `password = test123`.
+- **Contracts Dashboard**:
+  - Sidebar navigation (Contracts, Insights, Reports, Settings).
+  - Topbar with user profile/logout.
+  - Contracts table with search & filters.
+  - Handles all states: Loading, Empty, Error.
+- **Contract Detail Page**:
+  - Metadata (title, parties, dates, status, risk).
+  - Clauses section with summary & confidence score.
+  - AI Insights with severity labels.
+  - Evidence panel (side drawer).
+- **Upload Modal**:
+  - Drag & drop OR file browse.
+  - Shows upload progress (Uploading → Success/Error).
+  - Simulated upload (no backend).
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack
+- [React](https://react.dev/) (functional components + hooks)
+- [Tailwind CSS v4](https://tailwindcss.com/)
+- [React Router DOM](https://reactrouter.com/)
+- Context API (state management)
+- Deployment: **Vercel / Netlify**
+
+---
+
+## 📂 Project Structure
+src/
+┣ components/ → Sidebar, Topbar
+┣ context/ → AuthContext (login state)
+┣ pages/ → Login, Dashboard, ContractDetail
+┣ App.jsx
+┣ main.jsx
+┗ index.css
+public/
+┗ contracts.json → mock API
+
+🔑 Login Credentials
+
+Username: any value
+
+Password: test123
+
+
+
+✅ Assumptions
+
+Mock authentication only (no real backend).
+
+Contract data is stored in public/contracts.json.
+
+File upload is simulated with setTimeout (no backend).
+
+Only the core flows (login, dashboard, detail, upload) are implemented.
+
+📊 Evaluation Mapping
+
+UI/UX Quality → Responsive, clean Tailwind UI
+
+React + Tailwind Skills → Functional components, hooks, utility classes
+
+API Consumption → Fetch contracts from mock JSON
+
+Code Quality → Context API, modular structure
+
+Deployment → Hosted on Vercel/Netlify
+
+Attention to Detail → Error/loading/empty states
